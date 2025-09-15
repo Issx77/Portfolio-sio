@@ -1,0 +1,593 @@
+
+/*
+______________________________________________
+
+	DEFINITIONS DES CONSTANTES DE STYLES 
+______________________________________________
+*/
+
+:root {
+
+    /*
+    Style sur les polices :
+    -----------------------
+    */
+    /* --typo-generale: 'Fira Sans', 'Open Sans'; */
+
+    /* Polices titres & sous-titre : */
+    /* --typo-titres:  'Kanit', 'Exo 2'; */
+
+
+    /*
+    Style sur les couleurs :
+    ------------------------
+    */
+
+    /* --navbar-brand-couleur: rgb(255, 166, 0); */
+    --nav-link: white;
+    --nav-link-active: rgb(255, 209, 5);
+
+
+    /* Redéfinition des couleurs de Bootstrap :*/
+    /* --bs-warning: rgb(255, 166,  0);
+    --bs-warning-rgb: 255, 166, 0;
+
+    --bs-warning-bg-subtle: rgb(250, 240, 100);
+    --bs-warning-border-subtle: rgb(250, 240, 100); */
+
+}
+
+
+
+/*
+________________________________________________
+
+	DEFINITION DES PROPRIETES DES CLASSES CSS
+________________________________________________
+*/
+
+/*
+----------------------
+PROPRIETES GENERALES :
+----------------------
+*/
+
+/*
+Définition du fond :
+--------------------
+*/
+body {
+    background-image:linear-gradient(0deg, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.95)),url('../backgrounds/body2.png');;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%; /*contain*/ 
+    height: 150px;
+    background-attachment: fixed;
+
+    
+
+  }
+
+
+  /*
+PROPRIETES SUR LE HEADER & NAVBAR :
+-----------------------------------
+*/
+
+/*
+Définition du fond du header :
+------------------------------
+*/
+
+.photo-bulle {
+    text-align: center;
+  margin: 20px auto;
+  width: 300px;              /* Taille de la bulle */
+  height: 300px;
+  border-radius: 500%;        /* Cercle parfait */
+  overflow: hidden;          /* Cache ce qui dépasse */
+  border: 10px solid (3498d);
+  text-align: center; /* Bordure bleue (optionnelle) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre (optionnelle) */
+}
+
+.photo-bulle img  {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* Remplit le cadre sans déformer */
+}
+
+
+.background-header {
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.95)), url('../backgrounds/header_background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%; /*contain*/ 
+    height: 180px;
+  }
+
+/*
+Couleur des éléments de navigations :
+-------------------------------------
+*/
+
+.navbar {
+    
+    font-size: 0.8em;
+}
+
+.nav-link-icon {
+    
+    font-size: 1.5em;
+}
+
+.nav-link {
+    
+    color: var(--nav-link);
+}
+
+.nav-link:hover, .dropdown-item:hover {
+    
+    color: var(--bs-warning);
+}
+
+.nav-link:active {
+    color: black;
+}
+
+
+.navbar-nav .nav-item .active {
+    color: var(--nav-link-active);
+  }
+
+
+.dropdown-item {
+    
+    font-weight: bold;
+    color: black;
+}
+
+.dropdown-item:active {
+    background-color: var(--navbar-brand-couleur);
+    color: white;
+}
+
+
+.navbar-toggler {
+    height: 50%;
+   size: 50cm;
+    background-color: rgba(255, 255, 255, 1);
+}
+.card {
+    transition:transform 0.8s
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+
+.card-body {
+    background-color: #000000;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0);
+    border-radius: 12px;
+    color: aliceblue;
+}
+
+.btn {
+    box-shadow: 4px 6px 6px rgba(0, 0, 0, 1);
+}
+
+.blur-text {
+  display: inline-block;
+  filter: blur(8px);
+  opacity: 0;
+  transition: filter 1s ease, opacity 1s ease;
+  transition-delay: 0.15s;
+}
+.blur-text.visible {
+  filter: blur(0);
+  opacity: 1;
+}
+.typed-text {
+  color: #000000;
+  font-weight: bold;
+}
+.typed-cursor {
+  display: inline-block;
+  animation: blink 0.7s infinite;
+  color: #ffffff;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+
+
+/* ===== Frise chronologique stylée ===== */
+
+/* ===== Frise chronologique stylée ===== */
+
+.frise-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px 0;
+}
+
+/* Ligne verticale */
+.frise-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #3498db;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.frise-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.frise-left {
+  left: 0;
+}
+
+.frise-right {
+  left: 50%;
+}
+
+/* Cercles */
+.frise-item::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+  background-color: #3498db;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.frise-left::before {
+  right: -10px;
+}
+
+.frise-right::before {
+  left: -10px;
+}
+
+/* Cartes de contenu */
+.frise-content {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.frise-left .frise-content {
+  text-align: right;
+}
+
+.frise-right .frise-content {
+  text-align: left;
+}
+
+.frise-date {
+  font-weight: bold;
+  color: #2980b9;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .frise-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    margin-bottom: 20px;
+  }
+
+  .frise-timeline::before {
+    left: 20px;
+  }
+
+  .frise-item::before {
+    left: 11px;
+    right: auto;
+  }
+
+  .frise-left, .frise-right {
+    left: 0;
+  }
+
+  .frise-left .frise-content,
+  .frise-right .frise-content {
+    text-align: left;
+  }
+}
+
+
+
+/* ==== STYLES DE BASE ==== */
+.bts-sio-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+}
+
+.bts-sio-title {
+  text-align: center;
+  color: #1a73e8;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+/* ==== ONGLET ==== */
+.bts-sio-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.bts-sio-tab {
+  background-color: #e3eaf3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  /* transition: background 0.3s; */
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+.bts-sio-tab.active,
+.bts-sio-tab:hover {
+  background-color: #1a73e8;
+  color: white;
+}
+
+/* ==== FRISE VERTICALE ==== */
+.bts-sio-timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.bts-sio-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #1a73e8;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.bts-sio-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.bts-sio-left {
+  left: 0;
+}
+
+.bts-sio-right {
+  left: 50%;
+}
+
+.bts-sio-item::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+  background-color: #1a73e8;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.bts-sio-left::before {
+  right: -10px;
+}
+
+.bts-sio-right::before {
+  left: -10px;
+}
+
+.bts-sio-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.bts-sio-left .bts-sio-content {
+  text-align: right;
+}
+
+.bts-sio-right .bts-sio-content {
+  text-align: left;
+}
+
+.bts-sio-tab-content {
+  display: none;
+}
+
+.bts-sio-tab-content.active {
+  display: block;
+}
+
+/* ==== Responsive ==== */
+@media screen and (max-width: 768px) {
+  .bts-sio-item,
+  .bts-sio-left,
+  .bts-sio-right {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .bts-sio-timeline::before {
+    left: 20px;
+  }
+
+  .bts-sio-item::before {
+    left: 11px !important;
+    right: auto !important;
+  }
+
+  .bts-sio-left .bts-sio-content,
+  .bts-sio-right .bts-sio-content {
+    text-align: left;
+  }
+}
+
+
+/* Section générale */
+.custom-section {
+  max-width: 600px;
+  margin: 50px auto; /* Centre horizontalement */
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.custom-section h2 {
+  color: #00d4ff;
+  margin-bottom: 20px;
+}
+
+/* Boutons alignés */
+.custom-buttons {
+  display: flex;
+  flex-direction: column; /* empile les boutons */
+  gap: 15px;
+}
+
+.custom-buttons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-buttons a:hover {
+  background: #00d4ff;
+  color: #000;
+}
+
+/* Section activités */
+.activites-section {
+  max-width: 800px;
+  margin: 80px auto; /* espace autour + centre horizontalement */
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.activites-section h2 {
+  color: #00d4ff;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+/* Boutons */
+.activites-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.activites-buttons a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 15px 20px;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.activites-buttons a:hover {
+  background: #00d4ff;
+  color: #000;
+}
+/* ----- Page de garde ----- */
+.rapport-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: white;
+  font-family: "Arial", sans-serif;
+}
+
+.cover-content {
+  text-align: center;
+  border: 2px solid black;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.cover-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.cover-name,
+.cover-class,
+.cover-period,
+.cover-place,
+.cover-year {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* ----- Section PDF ----- */
+.rapport-pdf {
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.rapport-pdf h2 {
+  margin-bottom: 20px;
+  font-family: "Arial", sans-serif;
+}
+
