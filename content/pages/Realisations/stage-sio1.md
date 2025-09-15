@@ -31,7 +31,7 @@ Title: Stage SIO1
   <!-- Rapport en PDF -->
   <section class="rapport-pdf">
     <h2>📄 Rapport complet en PDF</h2>
-    <embed src="rapport_stage_final.pdf" type="application/pdf" width="100%" height="800px">
+    <embed src="{static}/files/rapport_stage_final.pdf" type="application/pdf" width="100%" height="800px">
   </section>
 
 </body>
